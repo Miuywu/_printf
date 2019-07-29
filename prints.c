@@ -8,10 +8,11 @@
  *
  * Return: 0
  */
-void op_char(va_list list)
+int op_char(va_list list)
 {
 	char c = va_arg(list,  int);
 	_putchar(c);
+	return (0);
 }
 /**
  * op_int - calls function
@@ -19,9 +20,10 @@ void op_char(va_list list)
  *
  * Return: 0
  */
-void op_int(va_list list)
+int op_int(va_list list)
 {
 	printf("%d", va_arg(list, int));
+	return (0);
 }
 /**
  * op_float - calls function
@@ -29,9 +31,10 @@ void op_int(va_list list)
  *
  * Return: 0
  */
-void op_float(va_list list)
+int op_float(va_list list)
 {
 	printf("%f", va_arg(list, double));
+	return (0);
 }
 /**
  * op_char_ptr - calls function
@@ -39,18 +42,21 @@ void op_float(va_list list)
  *
  * Return: 0
  */
-void op_char_ptr(va_list list)
+int op_char_ptr(va_list list)
 {
 	int a;
 	char *str;
 
 	str = va_arg(list, char *);
 
-/*	if (str == NULL)*/
+	if (str == NULL)
 	a = 0;
 	while (str[a])
 	{
 		_putchar(str[a]);
 		a++;
 	}
+
+/*	printf("%s", str);*/
+	return (0);
 }

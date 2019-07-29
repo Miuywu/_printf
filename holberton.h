@@ -6,13 +6,13 @@
 #include <stdarg.h>
 
 void _puts(char *str);
-void _putchar(char);
+int _putchar(char);
 void print_all(const char * const format, ...);
 
-void op_char(va_list list);
-void op_int(va_list list);
-void op_float(va_list list);
-void op_char_ptr(va_list list);
+int op_char(va_list list);
+int op_int(va_list list);
+int op_float(va_list list);
+int op_char_ptr(va_list list);
 /**
  *struct ops - struct of functions and flags
  *@c: pointers to char string
@@ -23,7 +23,7 @@ void op_char_ptr(va_list list);
 typedef struct ops
 {
 	char *c;
-	void (*ch)(va_list);
+	int (*ch)(va_list);
 } op_t;
 
 #endif
