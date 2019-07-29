@@ -41,11 +41,16 @@ void op_float(va_list list)
  */
 void op_char_ptr(va_list list)
 {
+	int a;
 	char *str;
 
 	str = va_arg(list, char *);
 
 /*	if (str == NULL)*/
-
-	printf("%s", str);
+	a = 0;
+	while (str[a])
+	{
+		_putchar(str[a]);
+		a++;
+	}
 }
