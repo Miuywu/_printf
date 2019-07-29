@@ -12,7 +12,6 @@ void print_all(const char * const format, ...)
 {
 	int i;
 	int j;
-	char *separator = "";
 	va_list list;
 
 	op_t f_ops[] = {
@@ -32,9 +31,7 @@ void print_all(const char * const format, ...)
 		{
 			if (*f_ops[j].c == format[i])
 			{
-				printf("%s", separator);
 				f_ops[j].ch(list);
-				separator = ", ";
 			}
 			j++;
 		}

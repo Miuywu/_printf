@@ -10,7 +10,8 @@
  */
 void op_char(va_list list)
 {
-	printf("%c", va_arg(list,  int));
+	char c = va_arg(list,  int);
+	_putchar(c);
 }
 /**
  * op_int - calls function
