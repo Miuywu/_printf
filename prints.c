@@ -1,4 +1,4 @@
-#include "variadic_functions.h"
+#include "holberton.h"
 #include <stdio.h>
 #include <stdarg.h>
 
@@ -44,10 +44,8 @@ void op_char_ptr(va_list list)
 	char *str;
 
 	str = va_arg(list, char *);
-	if (str == NULL)
-	{
-		printf("(nil)");
-		return;
-	}
+
+/*	if (str == NULL)*/
+
 	printf("%s", str);
 }

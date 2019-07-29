@@ -1,4 +1,4 @@
-#include "variadic_functions.h"
+#include "holberton.h"
 #include <stdio.h>
 #include <stdarg.h>
 
@@ -24,7 +24,14 @@ void print_all(const char * const format, ...)
 
 	va_start(list, format);
 	i = 0;
+	while (format[i])
+	{
+		_putchar(format[i]);
+		i++;
+	}
+	i = 0;
 	j = 0;
+
 	while (format && format[i])
 	{
 		while (f_ops[j].c)
