@@ -22,7 +22,7 @@ int op_char(va_list list)
  */
 int op_int(va_list list)
 {
-	printf("%d", va_arg(list, int));
+	_putchar(va_arg(list, int) + '0');
 	return (0);
 }
 /**
