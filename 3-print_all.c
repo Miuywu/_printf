@@ -8,7 +8,7 @@
  * Description: Function that prints anything
  * Return: 0
  */
-void print_all(const char * const format, ...)
+void _printf(const char * const format, ...)
 {
 	int i;
 	int j;
