@@ -8,7 +8,7 @@
  * Description: Function that prints anything
  * Return: 0
  */
-void _printf(const char *format, ...)
+int _printf(const char *format, ...)
 {
 	int i, j;
 	va_list list;
@@ -48,4 +48,5 @@ void _printf(const char *format, ...)
 	}
 	_putchar('\n');
 	va_end(list);
+	return (0);
 }

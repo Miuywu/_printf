@@ -7,7 +7,7 @@
 
 void _puts(char *str);
 int _putchar(char);
-void _printf(const char * const format, ...);
+int _printf(const char *format, ...);
 
 int op_char(va_list list);
 int op_int(va_list list);
