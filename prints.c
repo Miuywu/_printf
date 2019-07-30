@@ -26,17 +26,6 @@ int op_int(va_list list)
 	return (0);
 }
 /**
- * op_float - calls function
- * @list: string struct
- *
- * Return: 0
- */
-int op_float(va_list list)
-{
-	printf("%f", va_arg(list, double));
-	return (0);
-}
-/**
  * op_char_ptr - calls function
  * @list: string struct
  *
@@ -47,12 +36,17 @@ int op_char_ptr(va_list list)
 	int a;
 	char *str;
 
+/**/
+	printf("op_char_ptr");
+
 	str = va_arg(list, char *);
 
 	if (str == NULL)
 	a = 0;
 	while (str[a])
 	{
+/**/
+		printf("inside str print loop");
 		_putchar(str[a]);
 		a++;
 	}
