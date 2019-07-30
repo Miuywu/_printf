@@ -13,6 +13,7 @@ int op_char(va_list list);
 int op_int(va_list list);
 int op_float(va_list list);
 int op_char_ptr(va_list list);
+int op_percent(va_list list);
 /**
  *struct ops - struct of functions and flags
  *@c: pointers to char string

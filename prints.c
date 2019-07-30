@@ -56,7 +56,5 @@ int op_char_ptr(va_list list)
 		_putchar(str[a]);
 		a++;
 	}
-
-/*	printf("%s", str);*/
 	return (0);
 }

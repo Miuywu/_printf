@@ -7,6 +7,8 @@
  */
 int main(void)
 {
-	_printf("ices", 1, 'H', "lberton");
+	_printf("-format- args:%i, %c, %s", 1, 'H', "lberton");
+	_printf("-format- double Percent:[%%]");
+	_printf("-format- invalid specifier:[%r]");
 	return (0);
 }

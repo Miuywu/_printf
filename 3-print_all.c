@@ -8,43 +8,42 @@
  * Description: Function that prints anything
  * Return: 0
  */
-void _printf(const char * const format, ...)
+void _printf(const char *format, ...)
 {
-	int i;
-	int j;
-	va_list list;
+        int i, j;
+        va_list list;
 
-	op_t f_ops[] = {
-		{"c", op_char},
-		{"i", op_int},
-		{"f", op_float},
-		{"s", op_char_ptr},
-		{NULL, NULL}
-	};
+        op_t f_ops[] = {
+                {"c", op_char},
+                {"i", op_int},
+                {"f", op_float},
+                {"s", op_char_ptr},
+                {NULL, NULL}
+        };
 
-	va_start(list, format);
-	i = 0;
-	while (format[i])
-	{
-		_putchar(format[i]);
-		i++;
-	}
-	i = 0;
-	j = 0;
-
-	while (format && format[i])
-	{
-		while (f_ops[j].c)
-		{
-			if (*f_ops[j].c == format[i])
-			{
-				f_ops[j].ch(list);
-			}
-			j++;
-		}
-		j = 0;
-		i++;
-	}
-	printf("\n");
-	va_end(list);
+        va_start(list, format);
+        i = 0;
+        while (format && format[i])
+        {
+                if (format[i] == '%' && format[i + 1] != '\0')
+                {
+                        while (f_ops[j].c != NULL)
+                        {
+                                if (*f_ops[j].c == format[i + 1])
+                                {
+                                        f_ops[j].ch(list);
+                                }
+                                j++;
+                        }
+                        j = 0;
+                        i+=2;
+                }
+                else
+                {
+                        _putchar(format[i]);
+                        i++;
+                }
+        }
+        _putchar('\n');
+        va_end(list);
 }
