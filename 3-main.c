@@ -13,5 +13,6 @@ int main(void)
 	_printf("-format- 3 Percent:[%%%]");
 	_printf("-format- 4 Percent:[%%%%]");
 	_printf("-format- invalid specifier:[%r]");
+	_printf("-format- 5 Percent:[%%%%%]");
 	return (0);
 }
