@@ -10,46 +10,46 @@
  */
 void _printf(const char *format, ...)
 {
-        int i, j;
-        va_list list;
-        op_t f_ops[] = {
-                {"c", op_char},
-                {"i", op_int},
-                {"f", op_float},
-                {"s", op_char_ptr},
-                {NULL, NULL}
-        };
+	int i, j;
+	va_list list;
+	op_t f_ops[] = {
+		{"c", op_char},
+		{"i", op_int},
+		{"f", op_float},
+		{"s", op_char_ptr},
+		{NULL, NULL}
+	};
 
-        va_start(list, format);
-        i = 0;
-        while (format && format[i])
-        {
-                if (format[i] == '%' && format[i + 1] != '\0')
-                {
-                        while (f_ops[j].c != NULL)
-                        {
-                                if (*f_ops[j].c == format[i + 1])
-                                {
-                                        f_ops[j].ch(list);
+	va_start(list, format);
+	i = 0;
+	while (format && format[i])
+	{
+		if (format[i] == '%' && format[i + 1] != '\0')
+		{
+			while (f_ops[j].c != NULL)
+			{
+				if (*f_ops[j].c == format[i + 1])
+				{
+					f_ops[j].ch(list);
 					break;
-                                }
-                                j++;
-                        }
+				}
+				j++;
+			}
 			if (f_ops[j].c == NULL)
 			{
 				_putchar(format[i]);
 				if (format[i + 1] != '%')
 					_putchar(format[i + 1]);
 			}
-                        j = 0;
-                        i+=2;
-                }
-                else
-                {
-                        _putchar(format[i]);
-                        i++;
-                }
-        }
-        _putchar('\n');
-        va_end(list);
+			j = 0;
+			i += 2;
+		}
+		else
+		{
+			_putchar(format[i]);
+			i++;
+		}
+	}
+	_putchar('\n');
+	va_end(list);
 }
