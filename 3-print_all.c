@@ -33,7 +33,6 @@ void _printf(const char *format, ...)
 					f_ops[j].ch(list);
 					break;
 				}
-				j++;
 			}
 			if (f_ops[j].c == NULL)
 			{
