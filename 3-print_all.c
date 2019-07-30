@@ -12,7 +12,6 @@ void _printf(const char *format, ...)
 {
         int i, j;
         va_list list;
-
         op_t f_ops[] = {
                 {"c", op_char},
                 {"i", op_int},
@@ -32,9 +31,16 @@ void _printf(const char *format, ...)
                                 if (*f_ops[j].c == format[i + 1])
                                 {
                                         f_ops[j].ch(list);
+					break;
                                 }
                                 j++;
                         }
+			if (f_ops[j].c == NULL)
+			{
+				_putchar(format[i]);
+				if (format[i + 1] != '%')
+					_putchar(format[i + 1]);
+			}
                         j = 0;
                         i+=2;
                 }
