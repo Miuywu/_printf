@@ -3,7 +3,7 @@
 #include <stdarg.h>
 
 /**
- * print_all - calls function
+ * _printf - calls function
  * @format: list of types of arguments passed to the function
  * Description: Function that prints anything
  * Return: 0
@@ -27,13 +27,11 @@ void _printf(const char *format, ...)
 		if (format[i] == '%' && format[i + 1] != '\0')
 		{
 			for (j = 0; f_ops[j].c != NULL; j++)
-			{
 				if (*f_ops[j].c == format[i + 1])
 				{
 					f_ops[j].ch(list);
 					break;
 				}
-			}
 			if (f_ops[j].c == NULL)
 			{
 				_putchar(format[i]);
