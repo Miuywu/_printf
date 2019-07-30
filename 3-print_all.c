@@ -15,7 +15,7 @@ void _printf(const char *format, ...)
 	op_t f_ops[] = {
 		{"c", op_char},
 		{"i", op_int},
-		{"f", op_float},
+		{"d", op_int},
 		{"s", op_char_ptr},
 		{NULL, NULL}
 	};
@@ -26,7 +26,7 @@ void _printf(const char *format, ...)
 	{
 		if (format[i] == '%' && format[i + 1] != '\0')
 		{
-			while (f_ops[j].c != NULL)
+			for (j = 0; f_ops[j].c != NULL; j++)
 			{
 				if (*f_ops[j].c == format[i + 1])
 				{
@@ -41,7 +41,6 @@ void _printf(const char *format, ...)
 				if (format[i + 1] != '%')
 					_putchar(format[i + 1]);
 			}
-			j = 0;
 			i += 2;
 		}
 		else
