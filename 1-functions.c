@@ -1,19 +1,13 @@
 #include "holberton.h"
 
-/**
- * op_int - prints int
- * @list: arguments
- * Return: numLength
- */
 int op_int(va_list list)
 {
-	int numInput = va_arg(list, int);
-	int numLength;
+	int count;
 
-	op_number(numInput);
-	numLength = digit_length(numInput);
-	return (numLength);
+	count = op_number(va_arg(list, int));
+	return (count);
 }
+
 /**
  * op_number - print int
  * @n: int passed from va_list
@@ -23,20 +17,25 @@ int op_number(int n)
 {
 	unsigned int m;
 
-	if (n >= 0)
+	int count = digit_length(n);
+
+	if (n == 0)
 	{
-		if (n >= 10)
-			op_number(n / 10);
+		_putchar('0');
+		return (1);
 	}
-	else
+	else if (n < 0)
 	{
 		_putchar('-');
 		m = -n;
-		if (m >= 10)
-			op_number(m / 10);
-		_putchar(m % 10 + '0');
 	}
-	return (0);
+	else
+		m = n;
+
+	if (m / 10 != 0)
+		op_number(m / 10);
+	_putchar(m % 10 + '0');
+	return (count);
 }
 /**
  * digit_length - get length of number

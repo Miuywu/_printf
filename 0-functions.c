@@ -31,13 +31,13 @@ int op_char(va_list list)
  */
 int op_char_ptr(va_list list)
 {
-	int a;
+	int a = 0;
 	char *str;
 
 	str = va_arg(list, char *);
 
 	if (str == NULL)
-		a = 0;
+		str = "(null)";
 	while (str[a])
 	{
 		_putchar(str[a]);
