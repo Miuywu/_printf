@@ -1,1 +1,0 @@
-gcc -Wall -pedantic -Werror -Wextra main.c 3-print_all.c prints.c _putchar.c holberton.h printer.c -o d
