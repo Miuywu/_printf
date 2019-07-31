@@ -10,8 +10,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0, j = 0;
-	int counter = 0;
+	int i = 0, j = 0, counter = 0;
 	va_list list;
 	op_t f_ops[] = {
 		{"c", op_char},
@@ -35,8 +34,7 @@ int _printf(const char *format, ...)
 					break;
 				}
 			if (f_ops[j].c == NULL)
-			{
-				counter += _putchar(format[i]);
+			{counter += _putchar(format[i]);
 				if (format[i + 1] != '%')
 					counter += _putchar(format[i + 1]);
 			}
@@ -44,6 +42,8 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
+			if (format[i + 1] == '\0')
+				return (-1);
 			counter += _putchar(format[i]);
 			i++;
 		}
