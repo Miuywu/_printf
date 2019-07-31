@@ -16,6 +16,10 @@ int op_char_ptr(va_list list);
 int op_int(va_list list);
 int op_number(int n);
 int digit_length(int n);
+int op_unsigned(va_list list);
+int op_unsignedNum(unsigned int n);
+int udigit_length(int n);
+
 /**
  *struct ops - struct of functions and flags
  *@c: pointers to char string
