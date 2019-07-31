@@ -9,9 +9,11 @@ This program prints the input string format. The format string may contain \
 specifiers which signal the program to print the corresponding argument in \
 place of the specifier.
 .SH OPTIONS
-s specifies string
+.SH s 
+specifies string
 prints string argument in place of specifier
-c specifes char
+.SH c
+specifes char
 prints char argument in place of specifier
-d, i specifies digit or integer
+.SH d, i specifies digit or integer
 prints number in place of specifier
