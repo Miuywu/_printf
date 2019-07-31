@@ -28,6 +28,7 @@ int op_number(int n)
 	{
 		_putchar('-');
 		m = -n;
+		count++;
 	}
 	else
 		m = n;
