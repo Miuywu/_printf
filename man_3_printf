@@ -15,5 +15,6 @@ prints string argument in place of specifier
 .SH c
 specifes char
 prints char argument in place of specifier
-.SH d, i specifies digit or integer
+.SH d, i 
+specifies digit or integer
 prints number in place of specifier
