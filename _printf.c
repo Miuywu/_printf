@@ -10,7 +10,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, j;
+	int i = 0, j = 0;
 	int counter = 0;
 	va_list list;
 	op_t f_ops[] = {
@@ -22,8 +22,6 @@ int _printf(const char *format, ...)
 	};
 
 	va_start(list, format);
-	i = 0;
-
 	if (format == NULL)
 		return (-1);
 	while (format && format[i])
