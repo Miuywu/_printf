@@ -5,7 +5,8 @@ This is the header file for this program. It is guarded and contains the librari
 # _printf.c
 This file checks if the inputs to the entire program and is the one being directly called to when using this program.
 # 0-functions.c
-This files contains op_char() and op_char_ptr() which print out characters and strings respectively.
+This files contains op_char() and op_char_ptr() which print out characters and strings respectively. 
+Also contains the function _putchar() which imitates the standard library's own putchar.
 # 1-functions.c
 This file contains:
 - op_int() which calls to the other functions
